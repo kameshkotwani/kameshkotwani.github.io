@@ -13,14 +13,19 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: MM
-email:
+title: Kamesh Kotwani
+email: kameshkotwani@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-twitter_username: username
-github_username: username
+  I am a results-driven Data Scientist and Big Data Engineer with a passion for transforming complex data into actionable insights. With an MSc in Data Science from the University of Sheffield and hands-on experience in machine learning, big data, and cloud computing, I specialize in building scalable AI solutions, deploying production-ready ML models, and designing robust data pipelines.
+
+  I am Microsoft Azure-certified (DP-100) and have worked on projects spanning NLP, time-series forecasting, and deep learning, delivering high-impact solutions in healthcare, finance, and analytics. My expertise in Python, Spark, AWS, Azure, Kubernetes, and CI/CD pipelines enables me to bridge the gap between data science and engineering, ensuring end-to-end solutions that drive business growth.
+
+  With experience as a Big Data Engineer at IQVIA and a Machine Learning Engineer at CDAC, I have developed high-performance data pipelines, optimized machine learning workflows, and improved platform reliability. Currently, as a Teaching Assistant at the University of Sheffield, I mentor students in Big Data Analytics, AWS, and Databricks, fostering the next generation of data professionals.
+
+  I thrive in solving real-world challenges using data, continuously learning and leveraging the latest advancements in AI, GenAI, and LLMs. Let’s connect and explore how data-driven strategies can make a difference!
+
+twitter_username: kameshkotwani
+github_username: kameshkotwani
 minimal_mistakes_skin: default
 search: true
 
@@ -58,34 +63,17 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "First Lastname"
-  avatar : "/assets/images/bio-photo.jpg"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
-  links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
-
-footer:
+  name   : "Kamesh Kotwani"
+  avatar : "/assets/images/profile_new.jpg"
+  bio    : ""
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
+      url: "https://twitter.com/kameshkotwani"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://github.com/kameshkotwani"
+    
 
 defaults:
   # _posts
