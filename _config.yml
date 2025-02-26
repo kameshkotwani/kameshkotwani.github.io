@@ -26,6 +26,7 @@ timezone: "Europe/London"
 include:
   - _pages
 
+
 # Set About as Homepage
 homepage:
   layout: single
@@ -46,7 +47,8 @@ plugins:
 author:
   name   : "Kamesh Kotwani"
   avatar : "/assets/images/profile_new.jpg"
-  bio    : " Data Scientist | Data Engineer | Machine Learning Engineer | MLOps"
+  bio    : "A Microsoft Azure-certified Data Scientist and Big Data Engineer with a passion for transforming complex data into actionable insights."
+  location: "United Kingdom"
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
@@ -54,20 +56,23 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/kameshkotwani"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/kameshkotwani/"
     
 
 defaults:
   # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
+  # - scope:
+  #     path: ""
+  #     type: posts
+  #   values:
+  #     layout: single
+  #     author_profile: true
+  #     read_time: true
+  #     comments: true
+  #     share: true
+  #     related: true
   # _pages
   - scope:
       path: "_pages"
@@ -75,6 +80,15 @@ defaults:
     values:
       layout: single
       author_profile: true
+  - scope:
+      path: ""
+      type: homepage
+    values:
+      layout: single
+      permalink: /
+      title: "About"
+      author_profile: true
+      content: /about/
 
 category_archive:
   type: liquid
