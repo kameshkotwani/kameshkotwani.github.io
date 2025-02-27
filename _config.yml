@@ -1,4 +1,4 @@
-title: "Kamesh Kotwani"
+title: "Kamesh Kotwani | Data Scientist"
 email: "kameshkotwani@gmail.com"
 description: >- # this means to ignore newlines until "baseurl:"
   A Microsoft Azure-certified Data Scientist and Big Data Engineer with a passion for transforming complex data into actionable insights.
@@ -24,7 +24,7 @@ timezone: "Europe/London"
 
 # Personal Details 
 author:
-  name   : "Kamesh Kotwani"
+  name   : "//Kamesh Kotwani_"
   avatar : "/assets/images/profile_new.jpg"
   bio    : "A Microsoft certified Data Scientist."
   links:
@@ -58,6 +58,7 @@ defaults:
       layout: single
       author_profile: true
       related: true
+      share: true
 
   # _pages
   - scope:
