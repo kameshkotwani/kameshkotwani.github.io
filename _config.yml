@@ -17,32 +17,12 @@ paginate: 5 # amount of posts to show
 paginate_path: /page:num/
 timezone: "Europe/London"
 
-include:
-  - _pages
 
-
-# Set About as Homepage
-homepage:
-  layout: single
-  permalink: /
-  title: "About"
-  author_profile: true
-  content: /about/
-
-# Plugins
-plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
-  - jekyll-include-cache
-
+# Personal Details 
 author:
   name   : "Kamesh Kotwani"
   avatar : "/assets/images/profile_new.jpg"
   bio    : "A Microsoft Azure-certified Data Scientist and Big Data Engineer with a passion for transforming complex data into actionable insights."
-  location: "United Kingdom"
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
@@ -50,23 +30,19 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/kameshkotwani"
-    - label: "LinkedIn"
+    - label: "Linkedin"
       icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/in/kameshkotwani/"
-    
+      url: "https://linkedin.com/in/kameshkotwani"
+    - label: "Kaggle"
+      icon: "fab fa-fw fa-kaggle"
+      url: "https://kaggle.com/kameshkotwan"
+
+
+include:
+  - _pages
+
 
 defaults:
-  # _homepage
-  - scope:
-      path: ""
-      type: homepage
-    values:
-      layout: single
-      permalink: /
-      title: "About"
-      author_profile: true
-      content: /about/
-
   # _posts
   - scope:
       path: ""
@@ -74,12 +50,9 @@ defaults:
     values:
       layout: single
       author_profile: true
-      read_time: true
-      comments: true
-      share: true
       related: true
-  # _pages
 
+  # _pages
   - scope:
       path: "_pages"
       type: pages
