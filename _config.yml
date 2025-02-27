@@ -8,6 +8,10 @@ github_username: kameshkotwani
 minimal_mistakes_skin: default
 search: true
 
+# plugins 
+plugins:
+  - jekyll-include-cache
+
 # Build settings
 markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
