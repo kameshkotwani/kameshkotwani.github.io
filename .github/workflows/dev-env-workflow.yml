@@ -31,7 +31,7 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        personal_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}  # Use PAT instead of GITHUB_TOKEN
+        personal_token: ${{ secrets.DEPLOY_TOKEN_DEV }}  # Use PAT instead of GITHUB_TOKEN
         publish_branch: dev-pages  # Ensure this is the correct branch
         publish_dir: ./_site
         destination_dir: dev-env
