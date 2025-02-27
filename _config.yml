@@ -61,7 +61,7 @@ defaults:
 
   # _pages
   - scope:
-      path: "_pages"
+      path: ""
       type: pages
     values:
       layout: single
@@ -73,3 +73,15 @@ category_archive:
 tag_archive:
   type: liquid
   path: /tags/
+
+
+# projects collection
+breadcrumbs:
+  enabled: true
+collections:
+  projects:
+    output: true
+    permalink: /ml-projects/:title/
+    author_profile: true
+
+related_posts: true
