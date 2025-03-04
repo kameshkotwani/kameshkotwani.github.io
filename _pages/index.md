@@ -1,10 +1,10 @@
 ---
-
+layout: single
+classes: wide
 permalink: /
 ---
 
 <br>
-
 
 
 Hi, I'm **Kamesh Kotwani**, a passionate **Data Scientist & MLOps Engineer** with expertise in **Machine Learning, Deep Learning, Big Data, and Cloud Computing**. I have a **strong foundation in MLOps, NLP, and predictive modeling** with experience in deploying ML models at scale.  
