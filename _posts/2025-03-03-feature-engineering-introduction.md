@@ -2,8 +2,8 @@
 layout: single
 title: "feature engineering: the backbone of machine learning models"
 date: 2025-03-03
-categories: [Feature Engineering, Machine Learning, Feature Scaling]
-tags: [Data Science, Feature Engineering, Machine Learning]
+categories: [Feature Engineering, Machine Learning, Feature Scaling,Feature Extraction]
+tags: [Data Science, Feature Engineering, Machine Learning,PCA,LDA]
 author_profile: true
 read_time: true
 comments: true
@@ -19,21 +19,19 @@ Feature engineering is the process of transforming raw data into meaningful feat
 But, before we dive into feature engineering, lets first understand what exatcly a feature is on context of machine learning.
 
 ## So what is a feature then?
-​In machine learning, a feature is an individual measurable property or characteristic of a data sample that is used as input for a model generally denoted by `X`. Features serve as the foundational elements that algorithms utilize to identify patterns, make predictions, or classify data. ​
 
+​In machine learning, a feature is an individual measurable property or characteristic of a data sample that is used as input for a model generally denoted by `X`. Features serve as the foundational elements that algorithms utilize to identify patterns, make predictions, or classify data. ​
 
 ### There are widely two types of features, you will come across:
 
-
 - *Numerical Features*: These are quantifiable attributes represented by numbers. Examples include age, height, weight, or income.​
+
 <div >
     <p align="center" style="border: 1px solid #000">
         <img src="{{ site.url }}{{ site.baseurl }}/assets/docs/feature-engineering-assets/numerical-features.png" alt="numerical-features" />
     <figcaption>numerical features.</figcaption>
     </p>
 </div>
-
-
 
 - *Categorical Features*: These are qualitative attributes that represent categories or groups, such as gender, color, or type of product.​ These features can be represented in numbers as well as strings.
 
@@ -73,8 +71,14 @@ Advanced techniques, such as **polynomial feature generation** and **target enco
 By thoughtfully applying these techniques, data scientists can transform raw data into a structured form that machine learning models can effectively utilize, leading to more accurate and reliable outcomes.  
 
 <!-- Todo: Add chart -->
+Below is a small chart demonstrating the core structure of what **Feature Engineering** looks like, I will discuss more of them in detail in the coming articles!
 
+<div >
+    <p align="center" style="border: 1px solid #000">
+        <img src="{{ site.url }}{{ site.baseurl }}/assets/docs/feature-engineering-assets/feature-engineering-tree.jpeg" alt="numerical-features" />
+    </p>
+    <figcaption>feature engineering tree</figcaption>
 
+</div>
 
-
-
+stay tuned for more exciting articles!
