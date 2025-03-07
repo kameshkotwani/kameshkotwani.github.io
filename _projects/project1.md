@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Image Classification with CNNs"
+title: "image classification with CNNs (university dissertation)"
 date: 2024-03-01
 description: "A deep learning model that classifies images using Convolutional Neural Networks."
 categories: 
@@ -16,4 +16,4 @@ related: true
 ---
 
 
-This project implements a CNN model using TensorFlow to classify images.
+This project implements a CNN model using TensorFlow to classify images. University Dissertation. Work in progress.
