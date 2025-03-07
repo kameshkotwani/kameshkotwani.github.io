@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Sentiment Analysis using ML, Mlflow, FastAPI and AWS"
+title: "sentiment analysis on user input"
 date: 2025-01-03
 description: "This project does topic modelling on the sentences passed by user"
 categories: 
@@ -14,5 +14,5 @@ classes: wide
 related: true
 ---
 
-This project does topic modelling on the sentences passed by user
+This project does topic modelling on the sentences passed by user, still work in progress.
 

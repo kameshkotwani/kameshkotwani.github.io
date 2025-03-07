@@ -14,6 +14,9 @@ plugins:
 
 # Build settings
 markdown: kramdown
+kramdown:
+  math_engine: mathjax
+mathjax: true
 remote_theme: mmistakes/minimal-mistakes
 # Outputting
 permalink: /:title/
@@ -67,7 +70,18 @@ defaults:
     values:
       layout: single
       author_profile: true
+  
+  # projects
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: single
+      author_profile: true
+      share: true
+      mathjax: true
 
+      
 category_archive:
   type: liquid
   path: /categories/
@@ -83,6 +97,5 @@ collections:
   projects:
     output: true
     permalink: /ml-projects/:title/
-    author_profile: true
 
 related_posts: true
