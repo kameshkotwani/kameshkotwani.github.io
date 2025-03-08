@@ -15,17 +15,13 @@ sidebar:
       - [kaggle - dataset](https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata)
 
 author_profile: true
-classes: wide
+# classes: wide
 related: true
 read_time: true
 header:
     teaser: assets/images/movie-recommender-header.png
 ---
 A streamlit application which recommendes movies using imdb dataset.
-
-## [see it in action](https://kameshkotwani-movie-recommender-app-2ef4kr.streamlit.app/)
-
-![Movie Recommender Demo]({{ site.url }}{{ site.baseurl }}/assets/gifs/movie-recommender.gif)
 
 ## the problem: too many choices
 
@@ -37,14 +33,14 @@ Curious about the magic behind these recommendation systems, I decided to **buil
 
 When it comes to recommendation systems, there are multiple approaches. Many platforms, like Netflix and Spotify, use **Collaborative Filtering**, which relies on user interactions—what users watch, rate, or interact with. However, since I wanted to focus purely on understanding **how movies are related to each other** based on their descriptions and genres, I implemented a **Content-Based Filtering** system.  
 
-## but how does content-based filtering work?
+### but how does content-based filtering work?
 
 Content-Based Filtering recommends items (movies, in this case) **based on their features** rather than user behavior. The idea is simple:  
 
 - If you like a movie, chances are you’ll enjoy another movie **with similar content** (genre, description, cast, etc.).  
 - Instead of relying on user preferences or ratings, the system analyzes the actual content of the movie and finds others that are closely related.  
 
-## **extracting meaning from movie descriptions: TF-IDF vectorization**  
+### **extracting meaning from movie descriptions: TF-IDF vectorization**  
 
 Since the core idea is to recommend movies based on their plot summaries, I used **TF-IDF (Term Frequency-Inverse Document Frequency) Vectorization**.  
 
@@ -57,7 +53,7 @@ Movie descriptions are just blocks of text, and machine learning models need num
 
 This way, we can **capture the essence of a movie's storyline** and compare it with others.  
 
-## **measuring similarity: cosine similarity**  
+### **measuring similarity: cosine similarity**  
 
 Now that each movie’s description is transformed into a numerical vector, we need a way to **measure how similar two movies are**. This is where **Cosine Similarity** comes in.  
 
@@ -76,7 +72,7 @@ where:
 - The **dot product** in the numerator measures the similarity between the vectors.  
 - The **denominator normalizes the values**, preventing bias from longer descriptions.  
 
-### **final flow of the recommendation system**  
+## **final flow of the recommendation system**  
 
 <div >
     <p align="center" style="border: 1px solid #000">
@@ -84,8 +80,12 @@ where:
     </p>
 </div>
 
-🚀 **Result?**  
+## result
+
 Instead of random or generic suggestions, the model **intelligently picks movies that have a similar storyline, genre, and themes**, just like how real-world recommendation engines work! 🎬🔥  
 
 This approach gave me a **hands-on understanding of how platforms like Netflix generate recommendations**, and I’m excited to improve it further by experimenting with hybrid models in the future! 🚀
 
+[see it in action](https://kameshkotwani-movie-recommender-app-2ef4kr.streamlit.app/)
+
+![Movie Recommender Demo]({{ site.url }}{{ site.baseurl }}/assets/gifs/movie-recommender.gif)

@@ -16,6 +16,11 @@ plugins:
 markdown: kramdown
 kramdown:
   math_engine: mathjax
+  toc_levels: 1..6
+
+toc: true
+toc_sticky: true
+
 mathjax: true
 remote_theme: mmistakes/minimal-mistakes
 # Outputting
@@ -80,6 +85,10 @@ defaults:
       author_profile: true
       share: true
       mathjax: true
+      toc: true
+      toc_sticky: true
+      toc_label: "Table of Contents"
+      toc_icon: "cog"
 
       
 category_archive:
