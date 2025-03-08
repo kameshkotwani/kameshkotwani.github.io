@@ -11,6 +11,8 @@ tags: [CNN,Deep Learning,Image Processing, mlflow,alexnet,imagenet,cassava,disea
 author_profile: true
 related: true
 read_time: true
+header:
+    teaser: assets/images/dissertation-teaser.webp
 ---
 Cassava is a staple crop for millions, especially in **sub-Saharan Africa**, where it provides a crucial source of food and income. However, diseases such as **Cassava Mosaic Disease (CMD)** and **Cassava Bacterial Blight (CBB)** threaten yields, leading to severe food security challenges. Traditional disease detection relies on **manual inspection**, which is often **inaccurate, time-consuming, and not scalable**.
 
