@@ -96,4 +96,4 @@ This research **demonstrates the power of AI in agriculture**, paving the way fo
 
 ## 📖 Read the full dissertation
 
-[Disease Detection in Cassava Leaves using CNN](https://workinprogress.com)
+[Disease Detection in Cassava Leaves using CNN]({{ site.url }}{{ site.baseurl }}/assets/docs/DissertationUniOfSheffieldCassavaLeaves.pdf)
