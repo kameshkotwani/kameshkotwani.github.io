@@ -13,6 +13,7 @@ toc: true
 toc_sticky: true
 auto_ids: true
 toc_levels: 1..6
+toc_icon: 'book-open'
 ---
 LangChain[^1] is an open-source framework for developling applications powered by large language models (LLMs). This article covers the theoretical aspect of LangChain by building a fundamental block for the challenges that a developer can face when creating something complex as a chat application, notably using custom data, and how Langchain comes into the picture to integrate, automate, and produce a complex chat application for seamless integration with multiple LLMs such as OpenAPI, Gemini, Huggingface, and many more. I humbly request you to read this article cover to cover, after reading you will have a solid answer to the question you see below.
 
@@ -45,12 +46,12 @@ This design further raises questions, what is **semantic search**? And more impo
 
 - **Approach 1:** Go to our mentor hand over the book and ask that we doubt this topic.
 
-- **Approach 2:** Go to the same mentor state the page number and ask the question. 
+- **Approach 2:** Go to the same mentor state the page number and ask the question.
 
-Obviously, `approach 2` is better since our mentor can directly look into the problem and clear the doubt right away. 
+Obviously, `approach 2` is better since our mentor can directly look into the problem and clear the doubt right away.
 The same scenario works for our app as well. If we hand over the whole document, it will be computationally expensive and the results will be sub-par.
 
-This is where the **semantic search** comes into play. But what is semantic search anyway? Well, here is your answer 
+This is where the **semantic search** comes into play. But what is semantic search anyway? Well, here is your answer
 
 ### 2.2. Type of searches  
 
@@ -68,7 +69,12 @@ _This is the reason why we are using semantic search rather than keyword search.
 
 ### 2.3. System Design
 
-Let's dive deep into the actual architecture of the application and understand the complexity of creating such a beautiful and simple yet extremely complex chat application without the knowledge of LangChain.
+Let's dive deep into the actual architecture of the application and understand the complexity of creating such a beautiful and simple yet extremely complex chat application without the knowledge of LangChain. Open the image in new tab to see the beauty of it.
+
+<figcaption> Architecture Desgin</figcaption>
+![Langchain Image]({{ site.url }}{{ site.baseurl }}/assets/images/langchain-images/langchain3.jpeg)
+
+
 
 ## References
 
