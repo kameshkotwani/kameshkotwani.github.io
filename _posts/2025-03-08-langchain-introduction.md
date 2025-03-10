@@ -1,7 +1,8 @@
 ---
 layout: single
 title: "Not your lame LangChain Introduction"
-date: 2025-03-08
+date: 2025-03-10
+show_date: true
 categories: [Machine Learning,Langchain, OpenAI, LLMs, Agents]
 tags: [langchain,chatgpt,claude,gemini,llm-agents]
 author_profile: true
@@ -32,7 +33,7 @@ This high-level image tells us that we have built an application which is combin
 - Generate small notes which I can use to cheat in my exam
 
 Ah, you get the idea.
-So lets discuss the design of this application without using LangChain.
+So let's discuss the design of this application without using LangChain.
 
 ## 2. No LangChain chat application
 
@@ -43,7 +44,7 @@ So let's design the application as is. But before that, we need to implement a s
 ![High Level Design]({{ site.url }}{{ site.baseurl }}/assets/images/langchain-images/langchain2.png)
 Let's suppose as a user you ask a question from your system "What are the assumptions for Linear Regression", now based on the data you have provided in this current situation, we have a corpus of PDFs, stored in some database, and this design will take that query and perform a "semantic search" based on the database and will return the relevant pages (in this case the pages containing the information regarding the question we asked) and then create a `"system query"` and this will be transferred to the BRAIN (which is not yet disclosed as how it works and what it is, we discuss this later). Here our BRAIN is crafted in such a way that it has the capability of Natural Language Understanding such that it understands our query. Secondly, it should have "context-aware" text generation ability to create the answer. Finally, our BRAIN gives out the answer to the original question the user asked or in this case, we asked.
 
-This design further raises questions, what is **semantic search**? And more importantly, why are we using it when we can directly feed the whole document to the BRAIN and get the answer anyway? So lets suppose the document we have is of thousand pages and we have a doubt in some topic "Linear Regression" which is present in page 462. Now, there are two ways we can approach this
+This design further raises questions, what is **semantic search**? And more importantly, why are we using it when we can directly feed the whole document to the BRAIN and get the answer anyway? So let's suppose the document we have is of thousand pages and we have a doubt in some topic "Linear Regression" which is present in page 462. Now, there are two ways we can approach this
 
 - **Approach 1:** Go to our mentor hand over the book and ask that we doubt this topic.
 
@@ -52,7 +53,7 @@ This design further raises questions, what is **semantic search**? And more impo
 Obviously, `approach 2` is better since our mentor can directly look into the problem and clear the doubt right away.
 The same scenario works for our app as well. If we hand over the whole document, it will be computationally expensive and the results will be sub-par.
 
-This is where the **semantic search** comes into play. But what is semantic search anyway? Well, here is your answer
+This is where semantic search plays a crucial role. But what exactly is it? Well, here is your answer
 
 ### 2.2. Type of searches  
 
@@ -138,11 +139,73 @@ LangChain offers a range of benefits that make it a powerful framework for build
 
 Each of these features helps developers streamline their workflow, **reduce complexity**, and **enhance efficiency** when building intelligent applications. Whether you're developing a chatbot, a retrieval-based system, or an AI-powered assistant, LangChain makes the process more **scalable and adaptable**.
 
-## 4. LangChain alternatives
+## 4. LangChain Flexibility: Switching LLMs & Embedding Models
+
+One of LangChain’s biggest strengths is how easily you can swap components which we discussed as how code hectic they can be.
+
+Using a simple code demonstration we can see how easily we can replace OpenAI’s GPT-4 with Google’s Gemini Pro and OpenAI’s embeddings with Hugging Face’s BAAI/bge-large-en model—all with minimal changes.
+
+In this example we are using OpenAI to load GPT-4 model and generate embeddings and Meta FAISS to store the vectors and retrieve relevant information.
+
+```python
+from langchain.llms import OpenAI
+from langchain.chains import RetrievalQA
+from langchain.vectorstores import FAISS
+from langchain.embeddings.openai import OpenAIEmbeddings
+from langchain.document_loaders import TextLoader
+
+# Load and process documents
+loader = TextLoader("data/sample.txt")  
+docs = loader.load()
+
+# Convert documents into vector embeddings
+vectorstore = FAISS.from_documents(docs, OpenAIEmbeddings())
+
+# Create a retrieval-augmented QA system
+qa_chain = RetrievalQA.from_chain_type(llm=OpenAI(model_name="gpt-4"), retriever=vectorstore.as_retriever())
+
+# Ask a question
+query = "What is LangChain?"
+answer = qa_chain.run(query)
+print(answer)
+
+```
+
+But what if you don’t want to pay OpenAI for their API, or your company decides to switch to another provider? No problem! Thanks to LangChain’s modular design, you can swap providers with just a few lines of code—as shown below, with just two small changes, LangChain allows us to swap between different LLMs and embedding models effortlessly. Let’s see it in action.
+
+```python
+from langchain.llms import GooglePalm
+from langchain.chains import RetrievalQA
+from langchain.vectorstores import FAISS
+from langchain.embeddings import HuggingFaceEmbeddings
+from langchain.document_loaders import TextLoader
+
+# Load and process documents
+loader = TextLoader("data/sample.txt")  
+docs = loader.load()
+
+# Convert documents into vector embeddings (Changed: Using Hugging Face's BGE model)
+hf_embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-large-en")
+vectorstore = FAISS.from_documents(docs, hf_embeddings)
+
+# Create a retrieval-augmented QA system (Changed: Using Google Gemini Pro instead of GPT-4)
+llm = GooglePalm(model_name="gemini-pro")
+qa_chain = RetrievalQA.from_chain_type(llm=llm, retriever=vectorstore.as_retriever())
+
+# Ask a question
+query = "What is LangChain?"
+answer = qa_chain.run(query)
+print(answer)
+```
+
+Just by changing two lines of code, you were able to switch models and embeddings, without worrying about the backend pipeline and other services.
+This showcases why LangChain is a game-changer—instead of being stuck with a single AI provider, you can seamlessly switch between OpenAI, Google, Anthropic, Hugging Face, or even local models with minimal changes!
+
+## 5. LangChain alternatives
 
 Although LangChain is extremely popular there are various other players in the market as well, Several alternatives to LangChain exist, each catering to different needs. LlamaIndex (formerly GPT Index) excels in retrieval-augmented generation (RAG) by enabling structured data retrieval. Haystack by Deepset is a strong choice for search and question-answering applications. Guidance provides fine-grained control over prompt execution, making it ideal for structured text generation. AutoGPT and BabyAGI specialise in autonomous AI agents for multi-step task automation. PromptFlow by Azure is suited for enterprises needing scalable AI workflows. CrewAI enables multiple AI agents to collaborate on complex tasks. For developers seeking flexibility, MLflow and Hugging Face Transformers allow custom LLM pipelines without predefined orchestration frameworks. The best alternative depends on specific requirements, such as retrieval, automation, or enterprise integration.
 
-## 5. TL;DR: Key Takeaways
+## TL;DR: Key Takeaways
 
 - Before LangChain, building AI applications required **complex manual orchestration** of multiple components.  
 - **Semantic search** helps retrieve only relevant text instead of feeding entire documents to an LLM.  
@@ -150,11 +213,22 @@ Although LangChain is extremely popular there are various other players in the m
 - It supports **multi-LLM compatibility, memory management, RAG, and external tool integrations**.  
 - **Alternatives like LlamaIndex & Haystack** also provide solutions for specific AI use cases.  
 
-## Thank You for Reading
+## Special thanks to Nitish Singh
+
+This article is heavily inspired by Nitish Singh’s LangChain Introduction video[^7] from CampusX. His ability to break down complex concepts into digestible explanations made it much easier for me to understand LangChain and its real-world applications.
+
+The original content was in Hindi, but I wanted to cater this knowledge to a global audience so that more people irrespective of language barriers can benefit from the incredible insights he shared. By structuring this article in English, my goal was to make it accessible to a wider community of AI and machine learning enthusiasts who are eager to explore LangChain.
+
+I sincerely thank Nitish Singh and the CampusX team for their exceptional educational content, which has helped countless learners, including myself, dive deep into LangChain and its capabilities. If you're comfortable with Hindi and want a more in-depth, hands-on introduction to LangChain, I highly recommend checking out Nitish Singh's CampusX video it's a fantastic resource!
+🙏 A big thank you to Nitish Sir and CampusX for their invaluable contributions to the AI community!
+
+🚀 **_Exciting News: This is just the first article in a series where I’ll continue breaking down more LangChain concepts! Stay tuned for upcoming deep dives, hands-on implementations, and advanced techniques!_**
+
+## Thank you for reading
 
 I truly appreciate you taking the time to read this article! 🎯 I hope it provided **valuable insights** into LangChain and how it simplifies working with LLMs.  
 
-If you **found it helpful**, feel free to **share it with fellow AI enthusiasts**. I’d love to hear your thoughts, feel free to reach me out in Linkedin!
+If you found this helpful, connect with me on [LinkedIn](https://www.linkedin.com/in/kameshkotwani) to discuss more LLM-powered innovations! What are your thoughts on LangChain—have you used it in a project yet?
 
 Let’s keep exploring and building amazing AI applications together! 💡🔥  
 
@@ -166,3 +240,4 @@ Let’s keep exploring and building amazing AI applications together! 💡🔥
 [^4]:<https://www.datacamp.com/blog/the-top-5-vector-databases>
 [^5]:<https://arxiv.org/abs/1706.03762>
 [^6]:<https://ollama.com/library/deepseek-r1:671b>
+[^7]:<https://www.youtube.com/watch?v=nlz9j-r0U9U>
