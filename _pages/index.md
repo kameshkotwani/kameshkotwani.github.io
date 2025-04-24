@@ -2,7 +2,6 @@
 layout: single
 classes: wide
 permalink: /
-title: "Kamesh Kotwani CV"
 ---
 
 ## Experience
