@@ -2,6 +2,7 @@
 layout: single
 classes: wide
 permalink: /
+title: "Work Experience"
 ---
 
 ### Graduate Teaching Assistant (Part Time)  
