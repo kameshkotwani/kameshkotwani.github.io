@@ -4,8 +4,6 @@ classes: wide
 permalink: /
 ---
 
-## Experience
-
 ### Graduate Teaching Assistant (Part Time)  
 **University of Sheffield, Sheffield, UK**  
 _Feb 2025 – Present_
