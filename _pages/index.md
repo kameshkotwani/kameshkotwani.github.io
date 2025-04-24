@@ -5,13 +5,6 @@ permalink: /
 title: "Kamesh Kotwani CV"
 ---
 
-**Email:** [kameshkotwani@gmail.com](mailto:kameshkotwani@gmail.com)  
-**LinkedIn:** [linkedin.com/in/kameshkotwani](https://linkedin.com/in/kameshkotwani)  
-**GitHub:** [github.com/kameshkotwani](https://github.com/kameshkotwani) 
-
----
-
-
 ## Experience
 
 ### Graduate Teaching Assistant (Part Time)  
