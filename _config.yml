@@ -34,7 +34,7 @@ timezone: "Europe/London"
 author:
   name   : "//Kamesh Kotwani_"
   avatar : "/assets/images/profile_new.jpg"
-  bio    : "A Microsoft certified Data Scientist."
+  bio    : "Data Scientist."
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
@@ -50,7 +50,7 @@ author:
       url: "https://kaggle.com/kameshkotwan"
     - label: Resume
       icon: "fas fa-fw fa-file-pdf"
-      url: "assets/docs/KameshKotwani_DataScientist_Resume.pdf"
+      url: "assets/docs/KameshKotwani_DataScientist_CV.pdf"
 
 
 include:
